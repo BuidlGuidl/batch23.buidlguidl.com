@@ -12,13 +12,14 @@ const ShivamPage: NextPage = () => {
                     <div className="absolute -bottom-16 left-8 p-1 bg-base-100 rounded-full shadow-lg">
                         <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-base-100 bg-base-300">
                             <Image
-                                src="/avatars/shivam.jpg"
+                                src="https://raw.githubusercontent.com/ShivamSoni20/batch23.buidlguidl.com/profile-page/packages/nextjs/public/avatars/shivam.jpg"
                                 alt="Shivam"
                                 width={128}
                                 height={128}
                                 className="object-cover w-full h-full object-top"
                                 priority
                                 quality={100}
+                                unoptimized
                             />
                         </div>
                     </div>
