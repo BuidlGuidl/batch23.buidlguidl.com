@@ -1,141 +1,144 @@
 import Image from "next/image";
 import { Address } from "@scaffold-ui/components";
 import type { NextPage } from "next";
+import { GlobeAltIcon } from "@heroicons/react/24/outline";
 
-/**
- * Shivam's Personal Builder Page
- * Built for Batch 23 - BuidlGuidl
- */
 const ShivamPage: NextPage = () => {
-    const shivam = {
-        name: "Shivam",
-        address: "0x7adfC0d7E2df25998f5978e029D310b7CEfc8F4A",
-        location: "India 🇮🇳",
-        currentFocus: ["Web3 Development", "AI/ML Integration", "NFT Analytics"],
-        learning: ["Smart Contracts", "Scalable Architectures", "Advanced Web3 Protocols"],
-        collaboration: "Open to collaborating on blockchain & decentralized applications",
-        askMeAbout: ["Java", "Full Stack", "Blockchain", "NFTs", "Web3"],
-        funFact: "I code best with strong coffee ☕ and love exploring tech trends daily!",
-        motto: "Building innovative solutions, one commit at a time 💡",
-    };
-
     return (
-        <div className="flex items-center flex-col grow pt-10 px-5 mb-20">
-            <div className="bg-base-100 shadow-2xl rounded-[3rem] p-8 md:p-12 max-w-4xl w-full border border-primary/10 relative overflow-hidden">
-                {/* Background Decorative Element */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full -ml-32 -mb-32 blur-3xl"></div>
-
-                <div className="flex flex-col md:flex-row items-center gap-10 relative z-10">
-                    <div className="relative group">
-                        <div className="w-48 h-48 rounded-[2.5rem] overflow-hidden border-4 border-base-200 shadow-2xl transition-transform duration-500 relative aspect-square">
+        <div className="flex items-center flex-col flex-grow pt-10 px-4">
+            <div className="max-w-4xl w-full bg-base-100 rounded-3xl shadow-xl overflow-hidden border border-base-300">
+                {/* Banner with modern gradient */}
+                <div className="h-48 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 relative">
+                    <div className="absolute -bottom-16 left-8 p-1 bg-base-100 rounded-full shadow-lg">
+                        <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-base-100 bg-base-300">
                             <Image
                                 src="/avatars/shivam.jpg"
-                                alt="Shivam Avatar"
-                                fill
+                                alt="Shivam"
+                                width={128}
+                                height={128}
+                                className="object-cover w-full h-full object-top"
                                 priority
                                 quality={100}
-                                className="object-cover object-[center_40%]"
                             />
                         </div>
-                        <div className="absolute -bottom-2 -right-2 bg-base-100 p-2 rounded-2xl shadow-lg border border-base-300">
-                            <span className="text-2xl">{shivam.location.split(" ")[1]}</span>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col items-center md:items-start grow text-center md:text-left">
-                        <h1 className="text-5xl font-black mb-1 tracking-tight">
-                            <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                                {shivam.name}
-                            </span>
-                        </h1>
-                        <p className="text-xl font-medium opacity-60 mb-4 italic">&quot;{shivam.motto}&quot;</p>
-
-                        <div className="mb-6 p-1 bg-base-200 rounded-2xl inline-block shadow-inner">
-                            <Address address={shivam.address} />
-                        </div>
-
-                        <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                            {shivam.askMeAbout.map(tag => (
-                                <span
-                                    key={tag}
-                                    className="px-4 py-1.5 bg-secondary/10 text-secondary-content rounded-full text-sm font-bold border border-secondary/20 transition-all hover:bg-secondary/20 cursor-default"
-                                >
-                                    #{tag}
-                                </span>
-                            ))}
-                        </div>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 relative z-10">
-                    {/* Current Focus Section */}
-                    <div className="bg-base-200/50 backdrop-blur-sm rounded-[2rem] p-8 border border-base-300">
-                        <h3 className="text-2xl font-black mb-6 flex items-center gap-3">
-                            <span className="p-2 bg-primary/20 rounded-xl text-primary text-base">🎯</span>
-                            Current Focus
-                        </h3>
-                        <ul className="space-y-4">
-                            {shivam.currentFocus.map(item => (
-                                <li key={item} className="flex items-center gap-3 font-medium opacity-80">
-                                    <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(var(--p),0.5)]"></div>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Learning Section */}
-                    <div className="bg-base-200/50 backdrop-blur-sm rounded-[2rem] p-8 border border-base-300">
-                        <h3 className="text-2xl font-black mb-6 flex items-center gap-3">
-                            <span className="p-2 bg-secondary/20 rounded-xl text-secondary text-base">📚</span>
-                            Deep Diving
-                        </h3>
-                        <ul className="space-y-4">
-                            {shivam.learning.map(item => (
-                                <li key={item} className="flex items-center gap-3 font-medium opacity-80">
-                                    <div className="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(var(--s),0.5)]"></div>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Fun Fact & Collaboration */}
-                    <div className="md:col-span-2 bg-gradient-to-br from-base-200 to-base-300 rounded-[2rem] p-8 border border-base-300 shadow-inner">
-                        <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
-                            <div className="flex-1">
-                                <h4 className="text-lg font-bold mb-2 flex items-center gap-2 opacity-70 uppercase tracking-widest">
-                                    Fun Fact
-                                </h4>
-                                <p className="text-xl font-medium leading-relaxed italic text-primary">{shivam.funFact}</p>
+                <div className="pt-20 pb-12 px-8 flex flex-col md:flex-row gap-8">
+                    {/* Left Details */}
+                    <div className="flex-1">
+                        <div className="flex justify-between items-start">
+                            <div>
+                                <h1 className="text-4xl font-bold mb-2">Shivam</h1>
+                                <p className="text-xl text-primary font-medium mb-4 flex items-center gap-2">
+                                    Full-Stack & Blockchain Developer
+                                    <span className="badge badge-neutral bg-base-300 text-base-content border-base-300 font-normal">
+                                        Web3 & AI/ML
+                                    </span>
+                                </p>
                             </div>
-                            <div className="w-px h-16 bg-base-content/10 hidden md:block"></div>
-                            <div className="flex-1">
-                                <h4 className="text-lg font-bold mb-2 flex items-center gap-2 opacity-70 uppercase tracking-widest">
-                                    Collaboration
-                                </h4>
-                                <p className="text-lg font-bold opacity-90">{shivam.collaboration}</p>
+                        </div>
+
+                        <div className="flex flex-wrap gap-4 mb-6">
+                            <div className="flex flex-col bg-base-200 px-4 py-2 rounded-xl border border-base-300">
+                                <span className="text-[10px] font-bold opacity-50 uppercase tracking-widest mb-1">Address</span>
+                                <Address address="0x7adfC0d7E2df25998f5978e029D310b7CEfc8F4A" />
+                            </div>
+                        </div>
+
+                        <p className="text-lg leading-relaxed text-base-content/80 mb-8 max-w-2xl">
+                            Shivam is a passionate full-stack blockchain developer from India 🇮🇳, specializing in Web3 development,
+                            AI/ML integration, and NFT analytics. He builds scalable decentralized applications using modern
+                            technologies and is always exploring the latest tech trends with a strong cup of coffee ☕.
+                        </p>
+
+                        <div className="flex gap-4">
+                            <a
+                                href="https://github.com/phipsae"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-circle btn-ghost border border-base-300 hover:bg-base-300"
+                                title="GitHub"
+                            >
+                                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a
+                                href="https://twitter.com/phipsae"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-circle btn-ghost border border-base-300 hover:bg-base-300"
+                                title="Twitter"
+                            >
+                                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-circle btn-ghost border border-base-300 hover:bg-base-300"
+                                title="Portfolio"
+                            >
+                                <GlobeAltIcon className="w-6 h-6 text-emerald-500" />
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Right Stats/Experience Card (Creative Element) */}
+                    <div className="md:w-72">
+                        <div className="bg-base-200 rounded-2xl p-6 border border-base-300">
+                            <h3 className="text-lg font-bold mb-4 border-b border-base-300 pb-2">Tech Stack</h3>
+                            <div className="flex flex-wrap gap-2">
+                                {[
+                                    "Java",
+                                    "TypeScript",
+                                    "Solidity",
+                                    "Next.js",
+                                    "Blockchain",
+                                    "NFTs",
+                                    "Web3",
+                                    "Hardhat",
+                                    "Foundry",
+                                    "Tailwind",
+                                ].map(tech => (
+                                    <span
+                                        key={tech}
+                                        className="bg-base-100 px-3 py-1 rounded-lg text-xs font-semibold shadow-sm border border-base-300 bg-opacity-50"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="mt-8">
+                                <h3 className="text-lg font-bold mb-4 border-b border-base-300 pb-2">Current Focus</h3>
+                                <ul className="space-y-2 text-sm">
+                                    <li className="flex items-start gap-2">
+                                        <span className="text-primary mt-1">•</span>
+                                        <span>Web3 Development</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="text-primary mt-1">•</span>
+                                        <span>AI/ML Integration</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <span className="text-primary mt-1">•</span>
+                                        <span>NFT Analytics</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="mt-8">
+                                <h3 className="text-lg font-bold mb-4 border-b border-base-300 pb-2">Philosophy</h3>
+                                <p className="text-sm italic opacity-70">
+                                    &quot;Building innovative solutions, one commit at a time 💡&quot;
+                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="mt-12 pt-8 border-t border-base-content/5 flex flex-col md:flex-row items-center justify-between gap-6 opacity-60 font-medium">
-                    <div className="flex items-center gap-6">
-                        <a
-                            href="https://github.com/phipsae"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="hover:text-primary transition-colors flex items-center gap-2 underline decoration-primary/30 underline-offset-4"
-                        >
-                            GitHub
-                        </a>
-                        <a href="#" className="hover:text-primary transition-colors flex items-center gap-2">
-                            Twitter
-                        </a>
-                    </div>
-                    <p className="text-sm">Batch 23 • {shivam.location}</p>
                 </div>
             </div>
         </div>
