@@ -12,7 +12,7 @@ const ShivamPage: NextPage = () => {
                     <div className="absolute -bottom-16 left-8 p-1 bg-base-100 rounded-full shadow-lg">
                         <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-base-100 bg-base-300">
                             <Image
-                                src="https://unavatar.io/github/phipsae"
+                                src="https://image2url.com/r2/bucket2/images/1767906593644-456cf5a9-4751-4d19-bee4-b80c9268fa08.jpeg"
                                 alt="Shivam"
                                 width={128}
                                 height={128}
