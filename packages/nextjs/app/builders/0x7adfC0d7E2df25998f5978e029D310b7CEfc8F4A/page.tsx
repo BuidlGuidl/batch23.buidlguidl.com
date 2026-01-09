@@ -30,7 +30,7 @@ const ShivamPage: NextPage = () => {
     }, []);
 
     // Theme-aware colors
-    const isDark = theme === "dark";
+    const isDark = mounted && theme === "dark";
     const bgGradient = isDark
         ? "from-slate-950 via-purple-950 to-slate-950"
         : "from-blue-50 via-purple-50 to-pink-50";
