@@ -100,6 +100,13 @@ const ShivamPage: NextPage = () => {
           }
         }
       `}</style>
+      <style jsx global>{`
+        @keyframes border-beam {
+          100% {
+            offset-distance: 100%;
+          }
+        }
+      `}</style>
 
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Terminal Header */}
@@ -158,7 +165,7 @@ const ShivamPage: NextPage = () => {
                 </div>
 
                 {/* Online status indicator */}
-                <div className="absolute -bottom-1 -right-1 bg-green-500 w-8 h-8 rounded-full border-4 border-white dark:border-slate-900 animate-pulse shadow-lg flex items-center justify-center">
+                <div className="absolute -bottom-1 -right-1 bg-green-500 w-8 h-8 rounded-full border-4 border-white dark:border-slate-900 animate-pulse shadow-lg flex items-center justify-center z-10">
                   <div className="w-3 h-3 bg-green-300 rounded-full animate-ping"></div>
                 </div>
               </div>
