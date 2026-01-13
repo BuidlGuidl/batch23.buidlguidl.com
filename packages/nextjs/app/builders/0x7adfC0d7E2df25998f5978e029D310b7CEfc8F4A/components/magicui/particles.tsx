@@ -13,6 +13,12 @@ interface ParticlesProps {
   vy?: number;
 }
 
+/**
+ * Particles Component
+ *
+ * Renders an interactive particle system on a canvas.
+ * Used for the background effect on the builder profile page.
+ */
 export default function Particles({
   className = "",
   quantity = 50,
@@ -46,6 +52,8 @@ export default function Particles({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [color]);
 
+  // Handles mouse movement to create interactive particle effects
+  // Wrapped in useCallback to prevent unnecessary re-renders and fix lint warnings
   const onMouseMove = useCallback(() => {
     if (canvasRef.current) {
       const rect = canvasRef.current.getBoundingClientRect();
