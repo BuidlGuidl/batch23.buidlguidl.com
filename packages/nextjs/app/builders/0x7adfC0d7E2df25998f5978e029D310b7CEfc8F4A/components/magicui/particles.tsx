@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface ParticlesProps {
   className?: string;
@@ -46,21 +46,7 @@ export default function Particles({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [color]);
 
-  useEffect(() => {
-    onMouseMove();
-  }, [canvasSize.w, canvasSize.h]);
-
-  useEffect(() => {
-    initCanvas();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [refresh]);
-
-  const initCanvas = () => {
-    resizeCanvas();
-    drawParticles();
-  };
-
-  const onMouseMove = () => {
+  const onMouseMove = useCallback(() => {
     if (canvasRef.current) {
       const rect = canvasRef.current.getBoundingClientRect();
       const { w, h } = canvasSize;
@@ -71,6 +57,20 @@ export default function Particles({
         mouseMoveRef.current = true;
       }
     }
+  }, [canvasSize]);
+
+  useEffect(() => {
+    onMouseMove();
+  }, [onMouseMove]);
+
+  useEffect(() => {
+    initCanvas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [refresh]);
+
+  const initCanvas = () => {
+    resizeCanvas();
+    drawParticles();
   };
 
   type Circle = {
