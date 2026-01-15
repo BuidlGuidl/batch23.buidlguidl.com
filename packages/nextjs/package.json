@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "build": "next build",
+    "build": "next build 2>&1 | findstr /V /C:\"warning while optimizing\" /C:\"@property --radialprogress\" /C:\"Unknown at rule\"",
     "check-types": "tsc --noEmit --incremental",
     "dev": "next dev",
     "format": "prettier --write . '!(node_modules|.next|contracts)/**/*'",
