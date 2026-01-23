@@ -26,6 +26,10 @@ export const menuLinks: HeaderMenuLink[] = [
     href: "/builders",
   },
   {
+    label: "Contributions",
+    href: "/contributions",
+  },
+  {
     label: "Hall of Fame",
     href: "/hall-of-fame",
     icon: <TrophyIcon className="h-4 w-4" />,

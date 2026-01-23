@@ -17,6 +17,14 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/builders": ["./app/builders/**/*"],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+    ],
+  },
 };
 
 const isIpfs = process.env.NEXT_PUBLIC_IPFS_BUILD === "true";
