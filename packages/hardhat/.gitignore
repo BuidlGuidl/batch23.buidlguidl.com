@@ -28,3 +28,6 @@ deployments
 
 # other
 temp
+
+# CheckIn.sol should be private
+contracts/CheckIn.sol

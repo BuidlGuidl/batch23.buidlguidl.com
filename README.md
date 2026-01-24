@@ -31,6 +31,46 @@ Next head to the Issues tab of your batch's Github repo. Once you complete Issue
 
 > 😲 Github can seem daunting! Take a look at our detailed guide on the "Fork and Pull" Github process [here](https://gist.github.com/ZakGriffith/69d1eb8baebddd7d370b87a65a7e3ec0).
 
+## Running the Repo
+
+### Prerequisites
+
+Before you begin, you need to install the following tools:
+- Node (>= v20.18.3)
+- Yarn (v1 or v2+)
+- Git
+
+To run the subgraph locally you also need:
+- Docker
+
+### Installing dependencies
+
+- `yarn install` - run on root directory
+- `cd packages/subgraph` and then `yarn install` - install subgraph dependencies
+
+
+### Running local environment
+
+1. Start your local hardhat node: `yarn chain` or `yarn chain:local` _if you plan to run subgraph locally_
+2. Deploy contracts: `yarn deploy`
+3. Change the dApp chain to hardhat in scaffold.config.ts (targetNetwork should be `chains.hardhat`)
+4. Start the front-end: `yarn start`
+
+#### If you want to run the subgraph locally:
+To allow local enviroment to hit the local subgraph, create a .env.local with this variable:
+`NEXT_PUBLIC_SUBGRAPH_URL=http://localhost:8000/subgraphs/name/buidlguidl/batch23-subgraph`
+
+5. `yarn subgraph:clean-node` cleans prev data (we will run and deploy everything from scratch)
+6. `yarn subgraph:local-prepare` This will change the subgraph files so that they point to local deployed contracts
+7. `yarn subgraph:run-node` spins up a local graph node (analogous to yarn chain)
+8. `yarn subgraph:local-create` Compiles the subgraph
+9. `yarn subgraph:local-ship` Deploys the subgraph on our local graph node
+10. `yarn subgraph:stop-node` Stops our node (once we finsish developing)
+
+
+Go to http://localhost:3000/. You should see SE-2 app.
+
+
 ### Selecting Issues to Tackle
 
 Issues will be tagged with the type of work entailed, so choose based on the work you would like to contribute. When you decide on one, leave a comment on it that indicates you are working on that issue which helps avoid duplication of efforts. It's also a great way to demonstrate your commitment to the task.
