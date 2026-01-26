@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const CACHE_KEY = "github_contributions_cache";
 const CACHE_DURATION = 5 * 60 * 1000;
@@ -24,83 +25,101 @@ interface CacheData {
   data: Contribution[];
 }
 
+interface GitHubPR {
+  number: number;
+  title: string;
+  merged_at: string | null;
+  created_at: string;
+  html_url: string;
+  user: { login: string; avatar_url: string };
+}
+
+const getCachedData = (): CacheData | null => {
+  if (typeof window === "undefined") return null;
+
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+
+    const cached: CacheData = JSON.parse(raw);
+    if (cached.data.length > 0 && "createdAt" in cached.data[0]) {
+      return cached;
+    }
+  } catch (e) {
+    console.error("Error parsing contributions cache", e);
+  }
+  return null;
+};
+
+const fetchContributions = async (): Promise<Contribution[]> => {
+  const [pullsRes, repoRes] = await Promise.all([fetch(PULLS_URL), fetch(REPO_URL)]);
+
+  if (!pullsRes.ok || !repoRes.ok) {
+    throw new Error("Failed to fetch contributions");
+  }
+
+  const rawPulls = await pullsRes.json();
+  const repoData = await repoRes.json();
+
+  if (!Array.isArray(rawPulls)) {
+    throw new Error("Failed to fetch contributions");
+  }
+
+  const mergedPRs: Contribution[] = rawPulls
+    .filter((pr: GitHubPR) => pr.merged_at)
+    .map((pr: GitHubPR) => ({
+      number: pr.number,
+      title: pr.title,
+      author: pr.user.login,
+      mergedAt: pr.merged_at as string,
+      createdAt: pr.created_at,
+      url: pr.html_url,
+      avatarUrl: pr.user.avatar_url,
+      type: "pr",
+    }));
+
+  const genesisEvent: Contribution = {
+    number: 0,
+    title: "Repository Created",
+    author: repoData.owner?.login || REPO_OWNER,
+    mergedAt: repoData.created_at,
+    createdAt: repoData.created_at,
+    url: repoData.html_url,
+    avatarUrl: repoData.owner?.avatar_url,
+    type: "genesis",
+  };
+
+  return [...mergedPRs, genesisEvent].sort((a, b) => new Date(b.mergedAt).getTime() - new Date(a.mergedAt).getTime());
+};
+
 export const useGitHubContributions = () => {
-  const [contributions, setContributions] = useState<Contribution[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const {
+    data: contributions,
+    isLoading,
+    isFetched,
+    error,
+    refetch,
+  } = useQuery({
+    queryKey: ["github-contributions"],
+    queryFn: fetchContributions,
+    staleTime: CACHE_DURATION,
+    initialData: () => getCachedData()?.data,
+    initialDataUpdatedAt: () => getCachedData()?.timestamp,
+  });
 
   useEffect(() => {
-    const fetchContributions = async () => {
-      const cachedString = localStorage.getItem(CACHE_KEY);
-      if (cachedString) {
-        try {
-          const cached: CacheData = JSON.parse(cachedString);
-          if (
-            Date.now() - cached.timestamp < CACHE_DURATION &&
-            cached.data.length > 0 &&
-            "createdAt" in cached.data[0]
-          ) {
-            setContributions(cached.data);
-            setIsLoading(false);
-            return;
-          }
-        } catch (e) {
-          console.error("Error parsing contributions cache", e);
-        }
-      }
-
+    if (isFetched && contributions) {
       try {
-        const [pullsRes, repoRes] = await Promise.all([fetch(PULLS_URL), fetch(REPO_URL)]);
-
-        if (pullsRes.ok && repoRes.ok) {
-          const rawPulls = await pullsRes.json();
-          const repoData = await repoRes.json();
-
-          if (Array.isArray(rawPulls)) {
-            const mergedPRs: Contribution[] = rawPulls
-              .filter((pr: any) => pr.merged_at)
-              .map((pr: any) => ({
-                number: pr.number,
-                title: pr.title,
-                author: pr.user.login,
-                mergedAt: pr.merged_at,
-                createdAt: pr.created_at,
-                url: pr.html_url,
-                avatarUrl: pr.user.avatar_url,
-                type: "pr",
-              }));
-
-            const genesisEvent: Contribution = {
-              number: 0,
-              title: "Repository Created",
-              author: repoData.owner?.login || REPO_OWNER,
-              mergedAt: repoData.created_at,
-              createdAt: repoData.created_at,
-              url: repoData.html_url,
-              avatarUrl: repoData.owner?.avatar_url,
-              type: "genesis",
-            };
-
-            const allEvents = [...mergedPRs, genesisEvent].sort(
-              (a, b) => new Date(b.mergedAt).getTime() - new Date(a.mergedAt).getTime(),
-            );
-
-            const newCache: CacheData = {
-              timestamp: Date.now(),
-              data: allEvents,
-            };
-            localStorage.setItem(CACHE_KEY, JSON.stringify(newCache));
-            setContributions(allEvents);
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching contributions:", error);
-      } finally {
-        setIsLoading(false);
+        const newCache: CacheData = {
+          timestamp: Date.now(),
+          data: contributions,
+        };
+        localStorage.setItem(CACHE_KEY, JSON.stringify(newCache));
+      } catch (e) {
+        console.error("Failed to save contributions to local storage", e);
       }
-    };
+    }
+  }, [contributions, isFetched]);
 
-    fetchContributions();
-  }, []);
-
-  return { contributions, isLoading };
+  return { contributions: contributions || [], isLoading, error, refetch };
 };
