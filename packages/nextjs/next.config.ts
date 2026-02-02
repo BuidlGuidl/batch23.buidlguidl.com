@@ -14,6 +14,14 @@ const nextConfig: NextConfig = {
     config.externals.push("pino-pretty", "lokijs", "encoding");
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "unavatar.io",
+      },
+    ],
+  },
   outputFileTracingIncludes: {
     "/builders": ["./app/builders/**/*"],
   },
@@ -33,8 +41,9 @@ if (isIpfs) {
   nextConfig.output = "export";
   nextConfig.trailingSlash = true;
   nextConfig.images = {
+    ...nextConfig.images,
     unoptimized: true,
   };
 }
 
-module.exports = nextConfig;
+export default nextConfig;

@@ -4680,11 +4680,13 @@ __metadata:
     bgipfs: ^0.0.12
     blo: ^1.2.0
     burner-connector: 0.0.20
+    clsx: ^2.1.1
     daisyui: ^5.0.9
     eslint: ^9.23.0
     eslint-config-next: ^15.2.3
     eslint-config-prettier: ^10.1.1
     eslint-plugin-prettier: ^5.2.4
+    framer-motion: ^12.26.2
     graphql: ^16.12.0
     kubo-rpc-client: ^5.0.2
     next: ^15.2.8
@@ -4696,6 +4698,7 @@ __metadata:
     react: ^19.2.3
     react-dom: ^19.2.3
     react-hot-toast: ^2.4.0
+    tailwind-merge: ^3.4.0
     tailwindcss: ^4.1.3
     type-fest: ^4.26.1
     typescript: ^5.8.2
@@ -9742,7 +9745,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:2.1.1":
+"clsx@npm:2.1.1, clsx@npm:^2.1.1":
   version: 2.1.1
   resolution: "clsx@npm:2.1.1"
   checksum: acd3e1ab9d8a433ecb3cc2f6a05ab95fe50b4a3cfc5ba47abb6cbf3754585fcb87b84e90c822a1f256c4198e3b41c7f6c391577ffc8678ad587fc0976b24fd57
@@ -12447,6 +12450,28 @@ __metadata:
   version: 1.19.5
   resolution: "fp-ts@npm:1.19.5"
   checksum: 67d2d9c3855d211ca2592b1ef805f98b618157e7681791a776d9d0f7f3e52fcca2122ebf5bc215908c9099fad69756d40e37210cf46cb4075dae1b61efe69e40
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^12.26.2":
+  version: 12.26.2
+  resolution: "framer-motion@npm:12.26.2"
+  dependencies:
+    motion-dom: ^12.26.2
+    motion-utils: ^12.24.10
+    tslib: ^2.4.0
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: f636498ef6abb0f5b8ccbade621d075085bb86bf939932dd4d8d2ad87485bdafb1ab79a1b4e9f580674be570eeab61440ccd5989c888e1c08ac299c798cb747b
   languageName: node
   linkType: hard
 
@@ -16499,6 +16524,22 @@ __metadata:
   version: 1.0.1
   resolution: "modern-ahocorasick@npm:1.0.1"
   checksum: ec83479f406511f37a966d66ce1c2b1701bb4a2cc2aabbbc257001178c9fbc48ce748c88eb10dfe72ba8b7f991a0bc7f1fa14683f444685edd1a9eeb32ecbc1e
+  languageName: node
+  linkType: hard
+
+"motion-dom@npm:^12.26.2":
+  version: 12.26.2
+  resolution: "motion-dom@npm:12.26.2"
+  dependencies:
+    motion-utils: ^12.24.10
+  checksum: 598f095c9b92a198bdece3ec262c44992fdbe9430666604ef8c2ffaa69b63e38e2068de239a371dc5bd260624d6fe34751c3cc38cbc40c40fba04a12db7d5d06
+  languageName: node
+  linkType: hard
+
+"motion-utils@npm:^12.24.10":
+  version: 12.24.10
+  resolution: "motion-utils@npm:12.24.10"
+  checksum: 5ab27ca881f125cfbb9a3f5dac50a763d4ea820fbdd94847fed5cddc457fb30468c4b2e9f7292d89caafbdaee14615b65a7664bcfa10ec123ceebfcecea86885
   languageName: node
   linkType: hard
 
@@ -20826,6 +20867,13 @@ __metadata:
     string-width: ^4.2.3
     strip-ansi: ^6.0.1
   checksum: 08249c7046125d9d0a944a6e96cfe9ec66908d6b8a9db125531be6eb05fa0de047fd5542e9d43b4f987057f00a093b276b8d3e19af162a9c40db2681058fd306
+  languageName: node
+  linkType: hard
+
+"tailwind-merge@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "tailwind-merge@npm:3.4.0"
+  checksum: 172d0bc19af4512e037e481354e9038211b2748f1a96f51a6c33559aec2fc4230e6ad52c0b16c4ccc03d8392b87781a615cd1b93badcbd6333b160eb5aca30f7
   languageName: node
   linkType: hard
 
