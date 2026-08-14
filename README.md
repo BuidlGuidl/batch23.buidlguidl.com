@@ -1,83 +1,165 @@
-# Welcome to your BuidlGuidl Batch!
+# Welcome to BuidlGuidl Batch 24!
 
-🧨 Congratulations on joining a BuidlGuidl Batch! You've completed SpeedRunEthereum and gotten your feet wet in Scaffold-ETH, Solidity coding, deploying contracts, and basic front-end development. Now it's time to take the next step on your educational journey!
+🧨 Congratulations on joining BuidlGuidl Batch 24! You've completed SpeedRunEthereum and gotten your feet wet in Scaffold-ETH, Solidity coding, deploying contracts, and basic front-end development.
 
-🧙‍♂️ Along with your fellow batch members and BuidlGuidl mentors you'll learn how to collaborate, meaningfully contribute to GitHub repositories, create and handle issues and pull requests, follow best practices in version control, and dive deeper into full-scale dApp development.
+🧙‍♂️ Along with your fellow batch members and BuidlGuidl mentors you'll learn how to collaborate, meaningfully contribute to GitHub repositories, create and handle issues and pull requests, and work as a distributed team.
 
 🔨 You will come out with all the tools needed to actively contribute to open-source projects!
 
 ## Introduction
 
-Let’s get you up to speed on what this program is all about and what you can look forward to.
-At the heart of it all is this GitHub repository, where you’ll collaborate with your batch members by working on issues and submitting pull requests. To successfully graduate and mint your graduation NFT in [Issue i)](/../../issues/4), make sure you’ve completed [Issue a)](/../../issues/12) and [Issue b)](/../../issues/11), and demonstrated active engagement in tackling other issues as well. If you run into any issues or have any questions, reach out to us in the Telegram group.
+Let's get you up to speed on what this program is all about and what you can look forward to.
 
-Here’s a quick rundown of what you’ll be doing:
+At the heart of it all is this GitHub repository, where you'll collaborate with your batch members by working on issues and submitting pull requests. To successfully graduate and mint your graduation NFT, you'll need to complete a series of tasks and actively contribute to the codebase.
 
-1. **Introduce Yourself:** Start by introducing yourself to the batch and mentors in GitHub discussion.
-2. **Complete [Issue a)](/../../issues/12):** 'Check in' to our smart contract by writing one of your own.
-3. **Move to [Issue b)](/../../issues/11):** Create a personal page and submit it to the batch repository via a pull request (PR).
-4. **Choose Open Issues:** After completing the initial tasks, explore and pick other open issues to work on—either individually or by collaborating with other batch members.
-5. **Graduate Successfully:** To graduate and mint your Graduation NFT [Issue i)](/../../issues/4), you must complete both [Issue a)](/../../issues/12) and [Issue b)](/../../issues/11), and actively contribute to other issues with your best effort. Minting will be unlocked at the end of the Batch.
+Here's a quick rundown of what you'll be doing:
 
-We aim to empower you with the skills of dApp development and collaborating with other developers. Remember, we’ll be with you every step of the way. Let’s build something amazing together!
+1. **Introduce Yourself:** Start by introducing yourself to the batch and mentors in GitHub discussions.
+2. **Complete Initial Tasks:** Begin with foundational issues marked as "(for all)" to get familiar with the workflow.
+3. **Create Your Contributions:** Build smart contracts, create UI components, or contribute to documentation.
+4. **Collaborate:** Work with other batch members on larger issues and features.
+5. **Graduate Successfully:** Complete all required tasks and active contributions to mint your Graduation NFT.
+
+We aim to empower you with the skills of dApp development and collaborating with other developers. Remember, we'll be with you every step of the way. Let's build something amazing together!
 
 ## Getting Started
 
-First, since our contract is deployed on the Arbitrum chain, we’ve ensured you have some Arbitrum Eth by sending a starting balance to the ETH address linked to your Builder profile. If you need additonal Eth you can bridge some mainnet Eth to the Arbitrum chain using the [Arbitrum Bridge](https://bridge.arbitrum.io/) or transfer from other networks using alternative bridges. For further information or support, feel free to reach out in the Telegram group.
+### Prerequisites
 
-Then you will head to the open Introductions discussion in your batch's GitHub repo and make a post introducing yourself. Also feel free to introduce yourself in the batch Telegram channel as well if you want.
+- Node.js >= 20.18.3
+- Yarn 3.2.3+
+- Git
+- A text editor (VS Code recommended)
 
-Next head to the Issues tab of your batch's Github repo. Once you complete Issue #1, move on to Issue #2. Everyone will complete the first two issues on their own, then can start taking on the other issues. Work and collaborate with your batch members in both Github and Telegram for a real-world experience. If you're working on an issue, looking to collaborate on an issue, or want feedback on an issue or pull request, shout out to your batch!
+### Installation
 
-> 😲 Github can seem daunting! Take a look at our detailed guide on the "Fork and Pull" Github process [here](https://gist.github.com/ZakGriffith/69d1eb8baebddd7d370b87a65a7e3ec0).
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/drQedwards/batch24.buidlguidl.com.git
+   cd batch24.buidlguidl.com
+   ```
 
-### Selecting Issues to Tackle
+2. **Install dependencies**
+   ```bash
+   yarn install
+   ```
 
-Issues will be tagged with the type of work entailed, so choose based on the work you would like to contribute. When you decide on one, leave a comment on it that indicates you are working on that issue which helps avoid duplication of efforts. It's also a great way to demonstrate your commitment to the task.
+3. **Start the local blockchain**
+   ```bash
+   yarn chain
+   ```
 
-Some examples of the issue tags are:
+4. **In another terminal, deploy the contracts**
+   ```bash
+   yarn deploy
+   ```
 
-- **(for all)**: These are issues that everyone in the batch will complete on their own.
-- **(contract)**: Smart contract work involving Solidity coding.
-- **(front end)**: Work to improve the front end of your batch's site.
-- **(easy)**: Simple tasks, ideal for beginners.
-- **(medium)**: Tasks with moderate difficulty.
-- **(difficult)**: Advanced tasks requiring deeper expertise.
+5. **In a third terminal, start the frontend**
+   ```bash
+   yarn start
+   ```
+
+The application will be available at `http://localhost:3000`
+
+### Project Structure
+
+```
+batch24.buidlguidl.com/
+├── packages/
+│   ├── hardhat/          # Smart contracts and deployment scripts
+│   ├── nextjs/           # Frontend application
+│   └── subgraph/         # GraphQL subgraph for indexing
+├── README.md             # This file
+├── CONTRIBUTING.md       # Contribution guidelines
+├── package.json          # Root package configuration
+└── yarn.lock             # Dependency lock file
+```
+
+## Tech Stack
+
+- **Smart Contracts:** Solidity (Hardhat framework)
+- **Frontend:** Next.js with React, TypeScript
+- **Web3 Integration:** Wagmi, RainbowKit, Viem
+- **Styling:** Tailwind CSS, DaisyUI
+- **Indexing:** The Graph (Subgraph)
+- **Package Manager:** Yarn Workspaces
+
+## Common Commands
+
+### Smart Contracts
+```bash
+yarn chain              # Start local blockchain
+yarn compile           # Compile Solidity contracts
+yarn deploy            # Deploy contracts to local network
+yarn test              # Run contract tests
+yarn hardhat:verify    # Verify contracts on block explorer
+```
+
+### Frontend
+```bash
+yarn start             # Start development server
+yarn build             # Build for production
+yarn lint              # Run linting
+yarn format            # Format code with Prettier
+```
+
+### Development
+```bash
+yarn format            # Format all code
+yarn lint              # Lint all packages
+```
 
 ## GitHub Workflow
 
-Something important to learn from this is the workflow when collaborating in Github. Here are some good Github best practices:
+### Selecting Issues to Tackle
 
-- **Commenting on Issues:** Comment on an Issue if you are working on it to avoid duplicating work. You can also collaborate with others on it. If you run into problems or questions, reach out!
-- **Issue and PR Descriptions:** In the descriptions of issues and pull requests, try to be as descriptive as possible. Include any relevant information on the problem being solved, and what is being accomplished by any new code you have added. Screenshots and videos can be very helpful with this. This detailed approach makes it easier for anyone to review and handle PRs effectively. And if there is a template for the PR, make sure to follow it!
+Issues will be tagged with the type of work entailed, so choose based on the work you would like to contribute. When you decide on one, leave a comment on it indicating you are working on that issue.
 
-> 😲 Github can seem daunting! Take a look at our detailed guide on the "Fork and Pull" Github process [here](https://gist.github.com/ZakGriffith/69d1eb8baebddd7d370b87a65a7e3ec0)
+**Issue Tags:**
+- **(for all):** Required tasks everyone must complete
+- **(contract):** Smart contract work involving Solidity coding
+- **(front end):** Frontend improvements and UI work
+- **(easy):** Beginner-friendly tasks
+- **(medium):** Moderate difficulty tasks
+- **(difficult):** Advanced tasks requiring deeper expertise
+- **(docs):** Documentation and guides
 
-You will all start out by completing issues, but this will change over time and you may want to start creating your own issues for your batch to help with. This is critical in the learning process! Have an idea, bug report, or discussion... Create an Issue!
+### Pull Request Process
 
-> 🚦 Remember: Batch members will have a variety of different experience levels, so contribute where you can, but also feel free to try something new! If you run into roadblocks and problems, talk it out with other members of your batch and the BuidlGuidl mentors!
+We follow the ["fork-and-pull" Git workflow](https://github.com/susam/gitpr):
 
-### PR Reviews
+1. Fork the repository (if you haven't already)
+2. Clone your fork locally
+3. Create a new branch with a descriptive name: `git checkout -b feature/your-feature-name`
+4. Make your changes and commit with clear messages
+5. Push to your fork: `git push origin feature/your-feature-name`
+6. Open a Pull Request against the main repository
+7. Tag reviewers and wait for feedback
 
-👷‍♂️ This batch will start with outside BuidlGuidl members managing the issues and pull requests, but as the batch progresses you'll get the opportunity to step into this role yourself.
+### Good PR Practices
 
-So if you want to take your GitHub skills to the next level, start actively engaging in the PR management process. This includes reviewing PRs, participating in discussions, requesting changes, and eventually merging them. This is all part of the GitHub workflow and is very important for effective, real-world collaboration on open-source projects! You may have to shout out to your mentors to get access to accomplish this.
-
-> Remember that Continuous Integration/Continuous Deployment (CI/CD) is a crucial aspect of the development process, ensuring that changes are tested and deployed efficiently. The project likely includes automated CI/CD pipelines. These are set up to run tests, check code quality, and deploy updates automatically. It helps maintain code quality and ensures that contributions do not introduce errors.
-
-## After Graduation
-
-After successfully graduating, we have futher challenges for you to tackle. If you haven't done all the SpeedRunEthereum challenges, give them a try.
-Then there is the ETH Tech Tree and also our Capture the Flag (CTF) challenges to hone and practice your solidity skills.
-If you run through a couple of these and want to continue building, you’ll have the opportunity to apply for a builder’s grant to develop a full-scale dApp! Acceptance will depend on both your contributions during the batch program and the description in the application of your project. For more details on the process and how to apply, please checkout the following [link](https://buidlguidl.notion.site/BuidlGuidl-Grant-Application-3aeae22606944cbfa91b7f958dd38a9b) and if you have questions, feel free to approach us.
+- Create a clear title that describes the work done
+- Write a detailed description with context
+- Link to related issues if applicable
+- Include screenshots for UI changes
+- Keep commits organized and well-messaged
+- Respond to review feedback promptly
 
 ## Useful Resources
 
-To help you make the most of your BuidlGuidl Batch experience, we've gathered some essential resources and guides:
+- **Scaffold-ETH 2 Docs:** [https://docs.scaffoldeth.io](https://docs.scaffoldeth.io)
+- **Solidity Documentation:** [https://docs.soliditylang.org](https://docs.soliditylang.org)
+- **OpenZeppelin Contracts:** [https://docs.openzeppelin.com/contracts](https://docs.openzeppelin.com/contracts)
+- **Ethereum Development:** [https://ethereum.org/en/developers](https://ethereum.org/en/developers)
+- **The Graph Documentation:** [https://thegraph.com/docs](https://thegraph.com/docs)
+- **Next.js Documentation:** [https://nextjs.org/docs](https://nextjs.org/docs)
 
-- **Scaffold-Eth2**: A modern, clean version of Scaffold-ETH with NextJS, RainbowKit, Wagmi, and Typescript. Supports Hardhat and Foundry. You can find the repo [here](https://github.com/scaffold-eth/scaffold-eth-2)
-- **Austin Griffith's YouTube**: https://www.youtube.com/channel/UC_HI2i2peo1A-STdG22GFsA/videos
-- **Scaffold-ETH2 Contribution Guide**: If you're looking to contribute to our open-source projects, this guide provides valuable insights on how to get started. Check it out [here](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md).
-- **PR Guide**: For a detailed understanding of the pull request process, our guide is a great resource. You can find it [here](https://gist.github.com/ZakGriffith/69d1eb8baebddd7d370b87a65a7e3ec0).
+## Getting Help
 
-The Scaffold-ETH2 and PR guides are a great place to start, but you may have to mold the instructions to suit your needs!
+- **GitHub Discussions:** Use discussions to ask questions and share ideas
+- **Issues:** Report bugs or request features via issues
+- **Discord/Telegram:** Connect with batch members for real-time support
+
+## License
+
+MIT License - See LICENSE file for details
