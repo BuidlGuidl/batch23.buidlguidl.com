@@ -1,259 +1,144 @@
-# Contributing to Batch 24
+# Welcome to BuidlGuidl Batch 24 Contributing Guide
 
-Thank you for investing your time in contributing to BuidlGuidl Batch 24!
+Thank you for investing your time in contributing to the BuidlGuidl Batch 24 program!
 
-This guide aims to provide an overview of the contribution workflow to help make the contribution process effective for everyone involved.
+This guide aims to provide an overview of the contribution workflow to help us make the contribution process effective for everyone involved.
 
 ## About the Project
 
-Batch 24 is a cohort-based learning program for developers who want to build decentralized applications on Ethereum. It combines the power of Scaffold-ETH 2 with collaborative development practices to help developers grow their skills in smart contract development, frontend integration, and open-source collaboration.
+The BuidlGuidl Batch 24 program is a comprehensive learning platform teaching builders how to develop decentralized applications. This repository serves as the collaboration hub where batch members work together on issues, submit pull requests, and graduate by completing key milestones.
 
 Read the [README](README.md) to get an overview of the project.
 
 ### Vision
 
-The goal of Batch 24 is to provide a learning environment where developers:
-- Master Ethereum dApp development
-- Learn collaborative development practices
-- Contribute meaningfully to open-source projects
-- Build a network of fellow developers
-- Graduate with a portfolio of contributions
+The goal of BuidlGuidl Batch 24 is to empower developers with the skills needed to:
+- Understand and write Solidity smart contracts
+- Deploy contracts to blockchain networks
+- Build full-stack dApps with modern web3 technologies
+- Collaborate effectively using GitHub and industry best practices
+
+The repo serves as both a learning environment and a live project, combining hands-on smart contract development with frontend integration.
 
 ### Project Status
 
-The project is under active development. You can view open Issues, follow the development process, and contribute to the project.
+The project is under active development with continuous updates from batch mentors and contributors.
+
+You can view the open Issues, follow the development process, and contribute to the project. We also track progress via [Project Management](https://ppm-sandy-seven.vercel.app/) to visualize batch progress and task allocation.
 
 ### Rules
 
-1. All code contributions require an Issue to be created and discussed before submitting a Pull Request. This ensures proper discussion, alignment, and consensus on the proposed changes.
+1. All code contributions require an Issue to be created and agreed upon by core contributors before submitting a Pull Request. This ensures proper discussion, alignment, and consensus on the proposal.
 2. Contributors must be humans, not bots.
 3. First-time contributions must not contain only spelling or grammatical fixes.
-4. Be respectful and constructive in all interactions.
+4. Comment on issues you intend to work on to avoid duplicate efforts and signal your activity to the team.
 
-## Getting Started
+## Getting started
 
 You can contribute to this repo in many ways:
 
-- Solve open issues
+- Solve open issues (contract, frontend, documentation)
 - Report bugs or feature requests
-- Improve the documentation
-- Help review pull requests
-- Share knowledge in discussions
+- Improve the documentation and guides
+- Review pull requests from fellow batch members
+- Help mentor newer batch members
 
-Contributions are made via Issues and Pull Requests (PRs). Here are some general guidelines:
+Contributions are made via Issues and Pull Requests (PRs). A few general guidelines for contributions:
 
-- Search for existing Issues and PRs before creating your own
-- Contributions should only fix/add the functionality in the issue OR address style issues, not both
-- If you're running into an error, provide context and steps to reproduce
-- Follow the code style and formatting conventions
-- Edit documentation if your changes require it
+- Search for existing Issues and PRs before creating your own.
+- Contributions should only fix/add the functionality in the issue OR address style issues, not both.
+- If you're running into an error, please give context. Explain what you're trying to do and how to reproduce the error.
+- Please use the same formatting in the code repository. You can configure your IDE to do it by using the prettier / linting config files included in each package.
+- If applicable, please edit the README.md file to reflect the changes.
 
-## Issues
+### Issues
 
-Issues should be used to report problems, request features, or discuss potential changes.
+Issues should be used to report problems, request a new feature, or discuss potential changes before a PR is created.
 
-### Solve an Existing Issue
+#### Solve an issue
 
-1. Browse [existing issues](https://github.com/drQedwards/batch24.buidlguidl.com/issues)
-2. Comment on an issue to indicate you're working on it
-3. Fork the repository and create a branch
-4. Make your changes
-5. Open a Pull Request referencing the issue
+Scan through our [existing issues](https://github.com/drQedwards/batch24.buidlguidl.com/issues) to find one that interests you.
 
-### Create a New Issue
+Issues are tagged by type and difficulty:
+- **(for all)**: Everyone in the batch will complete these on their own
+- **(contract)**: Smart contract work involving Solidity coding
+- **(front end)**: Frontend improvements and feature development
+- **(easy)**: Simple tasks, ideal for beginners
+- **(medium)**: Tasks with moderate difficulty
+- **(difficult)**: Advanced tasks requiring deeper expertise
 
-If a related issue doesn't exist:
+If a contributor is working on the issue, they will be assigned to the individual. If you find an issue to work on, **comment on it to indicate you're working on it** and open a PR with a fix for it.
 
-1. Use a clear, descriptive title
-2. Provide as much context as possible
-3. Include steps to reproduce (for bugs)
-4. Add relevant labels and milestones
-5. Screenshots or videos are highly appreciated
+#### Create a new issue
 
-## Pull Requests
+If a related issue doesn't exist, you can open a new issue.
 
-### Pull Request Process
+Some tips to follow when you are creating an issue:
 
-We follow the ["fork-and-pull" Git workflow](https://github.com/susam/gitpr):
+- Provide as much context as possible. Over-communicate to give the most details to the reader.
+- Include the steps to reproduce the issue or the reason for adding the feature.
+- Screenshots, videos, etc., are highly appreciated.
+- Use appropriate labels to categorize your issue (type and difficulty)
 
-1. **Fork** the repository
-2. **Clone** your fork locally
-3. **Create** a new branch with a descriptive name:
-   ```bash
-   git checkout -b feature/amazing-feature
-   # or
-   git checkout -b fix/issue-description
-   ```
-4. **Make** your changes following code style guidelines
-5. **Commit** with clear, descriptive messages:
-   ```bash
-   git commit -m "feat: Add amazing feature"
-   git commit -m "fix: Resolve issue with X"
-   ```
-6. **Push** to your fork:
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-7. **Open** a PR and tag reviewers for feedback
+### Pull Requests
 
-### High-Quality Pull Request Checklist
+#### Pull Request Process
 
-- [ ] Title clearly describes the work done
-- [ ] Description includes context and motivation
-- [ ] Linked to related issue(s)
-- [ ] Tests pass locally (`yarn test`)
-- [ ] Code follows project style (`yarn format`, `yarn lint`)
-- [ ] Screenshots included for UI changes
-- [ ] Documentation updated if needed
-- [ ] Commits are well-organized and messaged
+We follow the ["fork-and-pull" Git workflow](https://github.com/susam/gitpr)
 
-### After Submitting a PR
+1. Fork the repo
+2. Clone the project
+3. Create a new branch with a descriptive name (e.g., `feature/builder-profile-page`, `fix/contract-event-emission`)
+4. Commit your changes to the new branch
+5. Push changes to your fork
+6. Open a PR in our repository and tag one of the maintainers to review your PR
 
-- Respond promptly to review feedback
-- Mark conversations as resolved when addressed
-- Request re-review after making changes
-- Be patient and collaborative in discussions
+Here are some tips for a high-quality pull request:
 
-Once approved, your PR will be "squash-and-merged" to keep git history clean.
+- Create a title for the PR that accurately defines the work done.
+- Structure the description neatly to make it easy to consume by the readers. For example, you can include bullet points and screenshots instead of having one large paragraph.
+- Add the link to the issue if applicable (e.g., "Closes #42").
+- Have a good commit message that summarises the work done.
+- Run linting and formatting before submitting: `yarn format && yarn lint`
 
-## Code Style & Quality
+Once you submit your PR:
 
-### Formatting
+- We may ask questions, request additional information, or ask for changes to be made before a PR can be merged. These are to make the PR clear for everyone involved and aim to create the highest code quality.
+- As you update your PR and apply changes, mark each conversation resolved.
+- Be responsive to feedback and questions from reviewers.
 
-We use **Prettier** and **ESLint** to maintain consistent code style:
+Once the PR is approved, we'll "squash-and-merge" to keep the git commit history clean.
 
-```bash
-# Format all files
-yarn format
+### PR Reviews
 
-# Lint all files
-yarn lint
-```
+Starting with Batch 24, outside BuidlGuidl members manage issues and pull requests, but as the batch progresses, **you'll get the opportunity to step into the review role yourself**. 
 
-Your IDE can be configured to do this automatically. See configuration files:
-- `.prettierrc` - Prettier configuration
-- `.eslintrc.js` - ESLint configuration
-
-### Solidity Guidelines
-
-For smart contracts:
-- Follow [Solidity style guide](https://docs.soliditylang.org/en/latest/style-guide.html)
-- Use `pragma solidity ^0.8.0` or appropriate version
-- Include NatSpec documentation for functions
-- Write tests for all public functions
-- Check for security vulnerabilities
-
-### TypeScript/React Guidelines
-
-For frontend code:
-- Use TypeScript for type safety
-- Follow React best practices and hooks patterns
-- Keep components small and focused
-- Use the provided Scaffold-ETH hooks and components
-- Write meaningful variable and function names
-
-## Testing
-
-### Smart Contract Tests
-
-```bash
-# Run all tests
-yarn test
-
-# Run tests with gas reporting
-REPORT_GAS=true yarn test
-```
-
-### Frontend Testing
-
-Test locally before submitting:
-```bash
-# Build frontend
-yarn next:build
-
-# Check types
-yarn next:check-types
-
-# Lint code
-yarn lint
-```
-
-## Documentation
-
-Always update documentation if your changes affect:
-- User-facing functionality
-- Setup or installation process
-- Available commands or APIs
-- Project structure or configuration
-
-Documentation should be:
-- Clear and concise
-- Up-to-date with code
-- Include examples where helpful
-- Use proper Markdown formatting
-
-## Community Standards
-
-### Be Respectful
-
-We are committed to providing a welcoming and inclusive environment:
-- Be professional and respectful in all interactions
-- Listen to different perspectives
+If you want to take your GitHub skills to the next level:
+- Actively review PRs from other batch members
+- Participate in discussions about proposed changes
 - Provide constructive feedback
-- Help newer contributors learn
+- Request changes when necessary
 
-### Ask for Help
+## Useful Resources
 
-- Use GitHub Discussions for questions
-- Comment on issues for clarification
-- Reach out to mentors when stuck
-- No question is too basic!
+- **Scaffold-ETH 2 Docs**: [scaffold-eth.dev](https://scaffold-eth.dev)
+- **Solidity Docs**: [docs.soliditylang.org](https://docs.soliditylang.org)
+- **Web3 Guide**: [web3.hashnode.com](https://web3.hashnode.com)
+- **Fork and Pull Guide**: [GitHub guide to fork-and-pull workflow](https://gist.github.com/ZakGriffith/69d1eb8baebddd7d370b87a65a7e3ec0)
+- **Project Progress Tracker**: [https://ppm-sandy-seven.vercel.app/](https://ppm-sandy-seven.vercel.app/)
 
-### Share Knowledge
+## Code Style and Quality
 
-- Help review others' pull requests
-- Share useful resources and learnings
-- Document solutions to common problems
-- Mentor newer batch members
+- **Formatting**: We use Prettier. Run `yarn format` before committing.
+- **Linting**: We use ESLint. Run `yarn lint` to check for issues.
+- **Testing**: Run `yarn test` to ensure your changes don't break existing functionality.
+- **TypeScript**: We use TypeScript for type safety. Ensure `yarn check-types` passes.
 
-## Issue Tags Reference
+## Need Help?
 
-- **(for all)** - Required tasks everyone must complete
-- **(contract)** - Smart contract development
-- **(front end)** - Frontend and UI work
-- **(easy)** - Beginner-friendly, small scope
-- **(medium)** - Moderate complexity
-- **(difficult)** - Advanced tasks
-- **(docs)** - Documentation and guides
-- **(bug)** - Bug fixes
-- **(enhancement)** - Feature requests
-- **(good first issue)** - Great for newcomers
+- Check the existing [GitHub Discussions](https://github.com/drQedwards/batch24.buidlguidl.com/discussions)
+- Ask questions in the batch Telegram channel
+- Reach out to batch mentors and fellow builders
+- Don't hesitate to ask for help—that's what we're here for!
 
-## Graduation & Milestones
-
-To graduate from Batch 24:
-1. Complete all "(for all)" issues
-2. Contribute meaningfully to additional issues
-3. Help review pull requests from peers
-4. Demonstrate collaborative spirit
-5. Mint your Graduation NFT
-
-## Resources
-
-- **Scaffold-ETH 2:** [Documentation](https://docs.scaffoldeth.io)
-- **Solidity:** [Official Docs](https://docs.soliditylang.org)
-- **Ethereum:** [ethereum.org/developers](https://ethereum.org/en/developers)
-- **Git & GitHub:** [GitHub Guides](https://guides.github.com)
-- **The Graph:** [Subgraph Docs](https://thegraph.com/docs)
-
-## Recognition
-
-We recognize and appreciate all contributions! Top contributors may receive:
-- Badges and recognition on the README
-- Feature mentions in batch announcements
-- Opportunities to mentor future batches
-- Access to advanced learning materials
-
----
-
-Thank you for being part of Batch 24! Happy building! 🚀
+Thank you for being part of BuidlGuidl Batch 24! Let's build something amazing together. 🚀
